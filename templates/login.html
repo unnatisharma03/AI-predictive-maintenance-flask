@@ -18,6 +18,15 @@ h2{text-align:center;font-weight:700;margin-bottom:25px;}
 </head>
 <body>
 <div class="login-card">
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-danger text-center">
+{{ messages[0] }}
+</div>
+{% endif %}
+{% endwith %}
+
 <div class="logo">🤖</div>
 <h2>AI Predictive Maintenance</h2>
 <form action="/login" method="POST">
